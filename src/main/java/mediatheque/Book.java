@@ -10,6 +10,10 @@ public class Book extends Item {
 		this.author = author;
 	}
 
+	public void accept(ItemVisitor i) {
+		i.visit(this);
+	};
+
 	public String getAuthor() {
 		return author;
 	}
@@ -18,9 +22,7 @@ public class Book extends Item {
 		this.author = author;
 	}	
 
-	public void print() {
-		System.out.println(this);
-	}
+
 
 	@Override
 	public String toString() {
